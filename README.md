@@ -1,3 +1,4 @@
+Github rep:- https://github.com/monarche-hasrsha/MachineLearning_Algorithms_Harsha
 Supervised Machine Learning Classifiers with scikit-learn
 This repository contains four Jupyter Notebooks showcasing powerful supervised classification algorithms applied to popular datasets from scikit-learn. These notebooks demonstrate a complete machine learning workflow — from loading data to evaluation and visualization.
 
