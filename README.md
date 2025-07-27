@@ -1,137 +1,129 @@
-# MachineLearning_Algorithms_Harsha
+Supervised Machine Learning Classifiers with scikit-learn
+This repository contains four Jupyter Notebooks showcasing powerful supervised classification algorithms applied to popular datasets from scikit-learn. These notebooks demonstrate a complete machine learning workflow — from loading data to evaluation and visualization.
 
-This repository contains three Jupyter notebooks showcasing supervised classification using three powerful machine learning algorithms on standard datasets from scikit-learn:
+📂 Contents
+📘 K-Nearest Neighbors (KNN) – Digits Dataset
 
-K-Nearest Neighbors (KNN) on the Digits dataset
+📗 Support Vector Machine (SVM) – Breast Cancer Dataset
 
-Support Vector Machine (SVM) on the Breast Cancer dataset
+🍷 Random Forest – Wine Dataset
 
-Random Forest on the Wine dataset
-
-These notebooks demonstrate the full workflow: loading data, preprocessing, training models, making predictions, and evaluating performance.
+🚢 Decision Tree – Titanic Dataset
 
 📘 1. KNN on Digits Dataset
-Dataset:
-From sklearn.datasets
+📊 Dataset:
+Source: sklearn.datasets.load_digits()
 
-1797 grayscale images of handwritten digits (0–9)
+Samples: 1797 grayscale images of handwritten digits (0–9)
 
-Each image is 8×8 pixels (64 features)
+Features: Each image is 8×8 pixels → 64 numeric features
 
-Steps:
-Import Libraries: numpy, matplotlib, seaborn, sklearn
+🔧 Steps:
+Import libraries: numpy, matplotlib, seaborn, sklearn
 
-Load Dataset: load_digits()
+Load dataset
 
-Visualize Samples: Display example digit images using imshow()
+Visualize samples using imshow()
 
-Flatten Images: Convert 8×8 matrix to 1D array (64 pixels)
+Flatten 8×8 images into 1D vectors
 
-Train/Test Split
+Train-test split
 
-Model Training: Use KNeighborsClassifier with chosen k
+Train model using KNeighborsClassifier
 
-Predict & Evaluate: Confusion matrix, accuracy, classification report
+Predict & evaluate:
+
+Accuracy score
+
+Confusion matrix
+
+Classification report
 
 📗 2. SVM on Breast Cancer Dataset
-Dataset:
-Binary classification: malignant vs. benign
+📊 Dataset:
+Source: sklearn.datasets.load_breast_cancer()
 
-30 features extracted from digitized images of breast mass
+Type: Binary classification (Malignant vs. Benign)
 
-From load_breast_cancer() in sklearn.datasets
+Features: 30 numerical attributes from breast mass images
 
-Steps:
-Load Data: Convert into pandas DataFrame
+🔧 Steps:
+Load data and convert to Pandas DataFrame
 
-Explore Dataset: Check features, class balance
+Explore dataset: info(), describe(), class balance
 
-Visualize: Correlation matrix, count plots (optional)
+(Optional) Visualize with heatmaps or count plots
 
-Split Data
+Train-test split
 
-Model Training: SVC() with linear or RBF kernel
+Train model using SVC() (linear/RBF kernel)
 
-Prediction
+Predict & evaluate:
 
-Evaluation: Accuracy, confusion matrix, classification report
+Accuracy
+
+Confusion matrix
+
+Classification report
 
 🍷 3. Random Forest on Wine Dataset
-Dataset:
-Multiclass classification of 3 types of wine
+📊 Dataset:
+Source: sklearn.datasets.load_wine()
 
-13 chemical features per wine sample
+Type: Multiclass classification (3 wine types)
 
-From load_wine() in sklearn.datasets
+Features: 13 chemical properties per sample
 
-Steps:
-Import Libraries: pandas, seaborn, sklearn
+🔧 Steps:
+Import data into Pandas DataFrame
 
-Load Dataset: Store as a DataFrame
+Explore with .head(), .info(), heatmaps
 
-Explore & Visualize: Use head(), info(), and visualizations like heatmaps
+Train-test split
 
-Split Data: train_test_split()
+Train RandomForestClassifier(n_estimators=100)
 
-Model Training: Use RandomForestClassifier(n_estimators=100)
+Predict & evaluate:
 
-Prediction
+Accuracy
 
-Evaluation: Accuracy, confusion matrix, classification report
+Confusion matrix
 
-Feature Importance (Optional): Plot most important features
-🚢 Decision Tree Classifier on Titanic Dataset
-This Jupyter Notebook demonstrates how to build and evaluate a Decision Tree Classification model on the classic Titanic dataset using scikit-learn. The goal is to predict whether a passenger survived or not based on features like age, sex, class, etc.
+Classification report
 
-📁 Dataset
-Source: Kaggle Titanic Dataset (or via seaborn or other CSV imports)
+(Optional) Plot feature importance
 
-Target variable: Survived (0 = No, 1 = Yes)
+🚢 4. Decision Tree on Titanic Dataset
+📊 Dataset:
+Source: Kaggle Titanic Dataset
 
-🧠 Steps Involved
-1. Import Libraries
-pandas, numpy for data manipulation
+Type: Binary classification (Survived = 1, Not Survived = 0)
 
-seaborn, matplotlib for visualization
+🔧 Steps:
+Load dataset using read_csv()
 
-sklearn for model building and evaluation
+Inspect data using head(), info(), describe()
 
-2. Load Dataset
-Load the Titanic dataset into a Pandas DataFrame using read_csv().
+Preprocess:
 
-Use df.head(), df.info() and df.describe() to understand the dataset structure.
+Fill missing values (e.g., Age)
 
-3. Data Preprocessing
-Handle missing values (e.g., fill missing Age with mean or drop rows).
+Encode categorical columns (Sex, Embarked) using LabelEncoder or pd.get_dummies
 
-Convert categorical variables (e.g., Sex, Embarked) into numeric form using LabelEncoder or pd.get_dummies.
+Select features: Pclass, Sex, Age, SibSp, Parch, Fare, Embarked
 
-4. Feature Selection
-Choose relevant features (e.g., Pclass, Sex, Age, SibSp, Parch, Fare, Embarked) for prediction.
+Drop unused columns: PassengerId, Name, Ticket, Cabin
 
-Drop unnecessary columns like PassengerId, Name, Ticket, Cabin.
+Train-test split (e.g., 70/30)
 
-5. Train-Test Split
-Use train_test_split() from sklearn.model_selection to divide the dataset into training and testing sets (e.g., 70/30 split).
+Train model using DecisionTreeClassifier()
 
-6. Train Decision Tree Model
-Initialize DecisionTreeClassifier() from sklearn.tree.
+Predict & evaluate:
 
-Fit the model using model.fit(X_train, y_train).
+Accuracy
 
-7. Model Evaluation
-Predict on the test set using model.predict().
+Confusion matrix
 
-Evaluate using:
+Classification report
 
-Accuracy Score
-
-Confusion Matrix
-
-Classification Report (precision, recall, F1-score)
-
-8. (Optional) Visualize Decision Tree
-Use plot_tree() from sklearn.tree or export as .dot file to visualize the tree structure.
-
-
-
+(Optional) Visualize tree using plot_tree()
