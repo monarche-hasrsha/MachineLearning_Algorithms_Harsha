@@ -1,0 +1,48 @@
+SVM on Breast Cancer Dataset
+Dataset:
+Breast Cancer Dataset from sklearn.datasets
+
+Binary classification problem (malignant or benign)
+
+Includes 30 numeric features
+
+Steps Involved:
+Import Libraries
+Core ML and visualization packages like pandas, matplotlib, seaborn, and sklearn.
+
+Load Dataset
+Load using load_breast_cancer() from sklearn.datasets.
+
+Data Exploration
+
+Convert the dataset to a pandas DataFrame for readability.
+
+Check for null values and class distribution.
+
+Visualization
+
+Optional heatmap or count plots to inspect correlations and label counts.
+
+Split Data
+
+Divide the dataset into training and testing sets.
+
+Train SVM Classifier
+
+Initialize SVC() with kernel options (linear, rbf, etc.)
+
+Fit the model on training data.
+
+Model Prediction
+
+Use the trained model to predict on the test set.
+
+Evaluation
+
+Classification report
+
+Accuracy score
+
+Confusion matrix
+
+Visualized confusion matrix with seaborn.heatmap
